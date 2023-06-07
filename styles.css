@@ -1,0 +1,75 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.score, .result {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding: 8px;
+    font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+body {
+    background-color: goldenrod;
+}
+
+.restart {
+    display: flex;
+    width: 400px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+.btns {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    margin: 10px;
+}
+
+button {
+    width: 125px;
+    height: 125px;
+    background-color: coral;
+    border-width: 4px;
+    border-radius: 8px;
+    border-color:rgb(190, 55, 55);
+    box-shadow: burlywood;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color:#fc672d;
+    transition: 0.4s;
+}
+
+button:focus {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px orangered;
+}
+
+.button:active {
+    background-color: rgb(255, 96, 38);
+}
