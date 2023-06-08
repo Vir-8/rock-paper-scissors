@@ -16,6 +16,8 @@ const reButton = document.createElement('button');
 reButton.textContent = "Wanna play again?"
 reButton.setAttribute('class', 'restart');
 
+const images = document.querySelectorAll('.btn img');
+
 // rock.onclick = playRound('rock', computerSelection); <= doesn't work expectedly, executes on reload and does nothing on clicking
 
 rock.onclick = function() {
@@ -40,7 +42,28 @@ function playRound(playerSelection, computerSelection)
     
     if (playerSelection === computerSelection)
     {
-        res.textContent = "Tie!";
+
+        if (res.textContent === "Tie!")
+        {
+            res.textContent = "Tie again!";
+        }
+        else if (res.textContent === "Tie again!")
+        {
+            res.textContent = "Tie once again!!";
+        }
+        else if (res.textContent === "Tie once again!!")
+        {
+            res.textContent = "Tie one more time??";
+        }
+        else if (res.textContent === "Tie one more time??")
+        {
+            res.textContent = "How many ties??";
+        }
+        else
+        {
+            res.textContent = "Tie!";
+        }
+
     }
     else if (playerSelection === "rock" && computerSelection === "paper")
     {
@@ -100,6 +123,10 @@ function disableButtons()
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
+
+    images.forEach(function(image) {
+      image.style.opacity = '0.5';
+    });
 }
 
 function restartButton()
@@ -112,10 +139,15 @@ reButton.onclick = function() {
     playerPoints = pcPoints = 0;
     console.log("restarting");
     scor.textContent = playerPoints + " - " + pcPoints;
+    res.textContent = "Let's start again! First to 5 wins!";
 
     rock.disabled = false;
     paper.disabled = false;
     scissors.disabled = false;
+
+    images.forEach(function(image) {
+        image.style.opacity = '1';
+    });
 
     reButton.remove();
 };
